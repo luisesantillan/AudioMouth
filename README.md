@@ -15,3 +15,11 @@ Before running the script, you need to install the required dependencies. You ca
 ```bash
 pip install pydub opencv-python moviepy pillow numpy
 ```
+## Usage
+
+Simply add 1-4 images in the frames folder and modify the paths in the config.json to use the images you want.
+Add the audios into the audio folder. If you're on Windows, now you can open run.bat and the output will be saved in the output folder.
+If you're on Linux, simply run the main.py file.
+```bash
+python run.py
+```
