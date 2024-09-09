@@ -17,7 +17,10 @@ cd AudioMouth
 pip install -r requirements.txt
 ```
 ## Usage
-![image](https://imgur.com/a/vvoh2vI)
+
+closed_mouth            |  closed_mouth_blinking            |  open_mouth            |  open_mouth_blinking
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![closed_mouth](https://github.com/user-attachments/assets/3ed0c597-df0e-4165-98d4-cf978e1338bb) | ![closed_mouth_blinking](https://github.com/user-attachments/assets/1296c2a7-4304-4935-b398-4ee5e1fe8a10) | ![open_mouth](https://github.com/user-attachments/assets/4715a73a-1a27-4ac9-a20b-954dde0aac0b) | ![open_mouth_blinking](https://github.com/user-attachments/assets/b7d04648-9158-4dd2-889c-27c67a64e0b2)
 
 Simply add 1-4 images in the frames folder and modify the paths in the config.json to use the images you want.
 Add the audios into the audio folder. If you're on Windows, now you can open run.bat and the output will be saved in the output folder.
