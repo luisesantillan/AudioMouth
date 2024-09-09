@@ -1,0 +1,20 @@
+{
+    "background_color": [0, 255, 0],
+    "frame_paths": {
+        "closed_mouth": "frames/closed_mouth.png",
+        "open_mouth": "frames/open_mouth.png",
+        "closed_mouth_blinking": "frames/closed_mouth_blinking.png",
+        "open_mouth_blinking": "frames/open_mouth_blinking.png"
+    },
+    "output_path":"output",
+    "frame_duration_ms":1000,
+    "audio_path": "audio",
+    "blink_duration": 0.15,
+    "minimum_blinking_delay":2,
+    "maximum_blinking_delay": 5,
+    "initial_blink_time": -2,
+    "frame_rate": 24,
+    "decibel_threshold": -18.0,
+    "codec": "libx264",
+    "audio_codec": "aac"
+}

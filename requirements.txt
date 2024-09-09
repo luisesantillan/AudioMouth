@@ -1,0 +1,5 @@
+pydub
+opencv-python
+numpy
+pillow
+moviepy
