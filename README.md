@@ -27,5 +27,7 @@ closed_mouth            |  closed_mouth_blinking            |  open_mouth       
 If you're on Windows, now you can open run.bat and the output will be saved in the output folder.
 If you're on Linux, simply run the main.py file.
 
-https://github.com/user-attachments/assets/01d82d8f-7cad-4929-80b7-96cbc3bca781
+https://github.com/user-attachments/assets/dcf3728c-0d3b-455d-b17e-5e9819be069b
+
+
 
