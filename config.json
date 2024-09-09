@@ -14,7 +14,8 @@
     "maximum_blinking_delay": 5,
     "initial_blink_time": -2,
     "frame_rate": 24,
-    "decibel_threshold": -26.0,
+    "dynamic_threshold": 1,
+    "decibel_threshold": -30.0,
     "codec": "libx264",
     "audio_codec": "aac"
 }

@@ -2,6 +2,7 @@ import os, random, json
 import numpy as np
 from pydub import AudioSegment
 from pydub.utils import make_chunks
+from pydub.effects import compress_dynamic_range
 from PIL import Image
 import cv2
 from moviepy.editor import VideoClip, AudioFileClip
@@ -50,16 +51,29 @@ for audio_file in os.listdir(config['audio_path']):
     audio_path = os.path.join(config['audio_path'], audio_file)
     audio = AudioSegment.from_file(audio_path)
 
-    # Split the audio into chunks
-    audio_chunks = make_chunks(audio, frame_duration_ms)
+    # Apply compression
+    compressed_audio = compress_dynamic_range(audio, threshold=-20.0, ratio=8.0, attack=1.0, release=10.0)
+    
+    # Normalize audio
+    target_dBFS = -10.0
+    change_in_dBFS = target_dBFS - compressed_audio.dBFS
+    normalized_audio = compressed_audio.apply_gain(change_in_dBFS)
+
+    # Split the audio into chunks of the same duration as the frames
+    audio_chunks = make_chunks(normalized_audio, frame_duration_ms)
 
     # Function to calculate decibels of a chunk
     def calculate_decibels(chunk):
         return chunk.dBFS
 
-    # Threshold from config
-    decibel_threshold = config['decibel_threshold']
-
+    # Decide whether to use dynamic threshold or a fixed threshold
+    if config["dynamic_threshold"] == 1:
+        # Calculate average decibels
+        average_dBFS = sum(chunk.dBFS for chunk in audio_chunks) / len(audio_chunks)
+        decibel_threshold = average_dBFS + 4  # Set threshold above average
+    else:
+        decibel_threshold = config['decibel_threshold']
+    
     # Function to generate frames
     def make_frame(t):
         global last_blink_time
