@@ -9,11 +9,10 @@ AudioMouth is a Python app that generates animated videos by syncing mouth movem
 - Supports mp3 audio input and PNG image input.
 
 ## Installation
-
-Before running the script, you need to install the required dependencies. You can do this by running:
+Git clone the repository and install the required dependencies. You can do this by opening the command line in the AudioMouth folder and running:
 
 ```bash
-pip install pydub opencv-python moviepy pillow numpy
+pip install -r requirements.txt
 ```
 ## Usage
 
